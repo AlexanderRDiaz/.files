@@ -16,24 +16,24 @@ vim.keymap.set("v", "<Right>", "<nop>")
 
 -- selene: allow(unused_variable)
 function EscapePair()
-	local closers = { ")", "]", "}", ">", "'", '"', "`", "," }
-	local line = vim.api.nvim_get_current_line()
-	local row, col = table.unpack(vim.api.nvim_win_get_cursor(0))
-	local after = line:sub(col + 1, -1)
-	local closer_col = #after + 1
-	local closer_i = nil
-	for i, closer in ipairs(closers) do
-		local cur_index, _ = after:find(closer)
-		if cur_index and (cur_index < closer_col) then
-			closer_col = cur_index
-			closer_i = i
-		end
-	end
-	if closer_i then
-		vim.api.nvim_win_set_cursor(0, { row, col + closer_col })
-	else
-		vim.api.nvim_win_set_cursor(0, { row, col + 1 })
-	end
+    local closers = { ")", "]", "}", ">", "'", "\"", "`", "," }
+    local line = vim.api.nvim_get_current_line()
+    local row, col = table.unpack(vim.api.nvim_win_get_cursor(0))
+    local after = line:sub(col + 1, -1)
+    local closer_col = #after + 1
+    local closer_i = nil
+    for i, closer in ipairs(closers) do
+        local cur_index, _ = after:find(closer)
+        if cur_index and (cur_index < closer_col) then
+            closer_col = cur_index
+            closer_i = i
+        end
+    end
+    if closer_i then
+        vim.api.nvim_win_set_cursor(0, { row, col + closer_col })
+    else
+        vim.api.nvim_win_set_cursor(0, { row, col + 1 })
+    end
 end
 
 vim.keymap.set("i", "<C-l>", "<cmd>lua EscapePair()<CR>")
@@ -51,14 +51,14 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("x", "<leader>p", '"_dP')
+vim.keymap.set("x", "<leader>p", "\"_dP")
 
-vim.keymap.set("n", "<leader>y", '"+y')
-vim.keymap.set("v", "<leader>y", '"+y')
-vim.keymap.set("n", "<leader>Y", '"+Y')
+vim.keymap.set("n", "<leader>y", "\"+y")
+vim.keymap.set("v", "<leader>y", "\"+y")
+vim.keymap.set("n", "<leader>Y", "\"+Y")
 
-vim.keymap.set("n", "<leader>d", '"_d')
-vim.keymap.set("v", "<leader>d", '"_d')
+vim.keymap.set("n", "<leader>d", "\"_d")
+vim.keymap.set("v", "<leader>d", "\"_d")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 

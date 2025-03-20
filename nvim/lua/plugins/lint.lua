@@ -40,13 +40,7 @@ return {
 				luau = { "selene" },
 				python = { "ruff" },
 			},
-			linters = {
-				selene = {
-					condition = function(_, bufnr)
-						return vim.fs.root(bufnr, "selene.toml")
-					end,
-				},
-			},
+			linters = {},
 		},
 		config = lint_config,
 	},

@@ -1,7 +1,8 @@
 local function lsp_config()
 	local lsp_defaults = require("lspconfig").util.default_config
 
-	lsp_defaults.capabilities = vim.tbl_deep_extend("force", lsp_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
+	lsp_defaults.capabilities =
+		vim.tbl_deep_extend("force", lsp_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 	lsp_defaults.capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
 
@@ -122,6 +123,7 @@ return {
 				luau_lsp = luau_lsp_config,
 				pyright = pyright_config,
 				taplo = function() end,
+				ruff = function() end,
 			},
 		},
 	},
