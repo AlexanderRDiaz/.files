@@ -1,4 +1,3 @@
----
 base: lua53
 globals:
   vim:
