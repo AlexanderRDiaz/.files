@@ -1,0 +1,4 @@
+[formatting]
+column_width = 100
+indent_string = '  '
+trailing_newline = false

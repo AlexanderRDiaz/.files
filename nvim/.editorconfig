@@ -1,0 +1,7 @@
+[*]
+
+[*.lua]
+indent_size = 4
+
+[*.{yml,json,toml}]
+indent_size = 2

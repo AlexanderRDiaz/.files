@@ -36,7 +36,7 @@ function EscapePair()
     end
 end
 
-vim.keymap.set("i", "<C-l>", "<cmd>lua EscapePair()<CR>")
+vim.keymap.set("i", "<C-l>", EscapePair)
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
