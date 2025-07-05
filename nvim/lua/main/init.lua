@@ -10,6 +10,6 @@ else
     vim.g.python3_host_prog = python_path
 end
 
-require("config.set")
-require("config.lazy")
-require("config.remap")
+require("main.set")
+require("main.lazy")
+require("main.remap")

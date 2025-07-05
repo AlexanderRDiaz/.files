@@ -1,5 +1,15 @@
 return {
     {
+        "zapling/mason-conform.nvim",
+        dependencies = {
+            "stevearc/conform.nvim",
+        },
+        opts = {
+            ignore_install = {},
+        },
+    },
+
+    {
         "stevearc/conform.nvim",
         cmd = "ConformInfo",
         event = "BufWritePre",
@@ -65,17 +75,4 @@ return {
             },
         },
     },
-
-    {
-        "zapling/mason-conform.nvim",
-        dependencies = {
-            "stevearc/conform.nvim",
-        },
-        opts = {
-            ignore_install = {},
-        },
-    },
 }
-
-
-

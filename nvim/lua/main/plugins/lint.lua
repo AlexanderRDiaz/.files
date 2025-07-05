@@ -31,6 +31,16 @@ end
 
 return {
     {
+        "rshkarin/mason-nvim-lint",
+        dependancies = { "williamboman/mason.nvim" },
+        opts = {
+            automatic_installation = true,
+            quiet_mode = false,
+            ignore_install = {},
+        },
+    },
+
+    {
         "mfussenegger/nvim-lint",
         dependencies = { "rshkarin/mason-nvim-lint" },
         event = { "BufReadPre", "BufNewFile" },
@@ -43,15 +53,5 @@ return {
             linters = {},
         },
         config = lint_config,
-    },
-
-    {
-        "rshkarin/mason-nvim-lint",
-        dependancies = { "williamboman/mason.nvim" },
-        opts = {
-            automatic_installation = true,
-            quiet_mode = false,
-            ignore_install = {},
-        },
     },
 }

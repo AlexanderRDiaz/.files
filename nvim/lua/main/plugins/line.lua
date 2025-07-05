@@ -1,5 +1,5 @@
 local function opts()
-    local symbols = require("util.symbols")
+    local symbols = require("main.util.symbols")
 
     local result = {
         options = {

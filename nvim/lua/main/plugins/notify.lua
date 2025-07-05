@@ -12,7 +12,7 @@ return {
         lazy = false,
         dependencies = { "rcarriga/nvim-notify" },
         opts = function()
-            local symbols = require("util.symbols")
+            local symbols = require("main.util.symbols")
 
             return {
                 icons = {

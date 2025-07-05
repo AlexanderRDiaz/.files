@@ -12,7 +12,6 @@ local function GetSchemas()
 end
 
 return function()
-    vim.lsp.enable("jsonls")
     vim.lsp.config("jsonls", {
         capabilities = vim.tbl_deep_extend(
             "force",
@@ -25,5 +24,6 @@ return function()
                 validate = { enable = true },
             },
         },
-    })
+    }) ""
+    vim.lsp.enable("jsonls")
 end
