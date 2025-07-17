@@ -1,0 +1,71 @@
+local spec = {
+    "xiyaowong/transparent.nvim",
+    enabled = true,
+    lazy = false,
+    priority = 1001,
+}
+spec.events = { "TransparentToggle", "TransparentEnable", "TransparentDisable" }
+
+spec.keys = {
+    { "<leader>tt", "<cmd>TransparentToggle<CR>", { mode = "n", desc = "Toggle transparency" } },
+}
+
+spec.opts = {
+    groups = {
+        "Normal",
+        "NormalNC",
+        "NormalFloat",
+        "FloatBorder",
+        "WinSeparator",
+        "Comment",
+        "Constant",
+        "Special",
+        "Identifier",
+        "Statement",
+        "PreProc",
+        "Type",
+        "Underlined",
+        "Todo",
+        "String",
+        "Function",
+        "Conditional",
+        "Repeat",
+        "Operator",
+        "Structure",
+        "LineNr",
+        "NonText",
+        "SignColumn",
+        "CursorLineNr",
+        "EndOfBuffer",
+    },
+    extra_groups = {
+        "NormalSB",
+        "Folded",
+        "NonText",
+        "SpecialKey",
+        "VertSplit",
+        "EndOfBuffer",
+        "SignColumn",
+        "TelescopeNormal",
+        "TelescopeBorder",
+        "TelescopePromptNormal",
+        "TelescopePromptBorder",
+        "TelescopePromptTitle",
+        "TroubleNormal",
+        "TroubleNormalNC",
+        "MasonNormal",
+        "LazyNormal",
+        "LazyButton",
+        "WhichKeyNormal",
+        "WhichKeyTitle",
+        "StatusLine",
+        "StatusLineNC",
+        "Tabline",
+        "TabLineFill",
+        "TabLineSel",
+        "Winbar",
+        "WinbarNC",
+    },
+}
+
+return spec
